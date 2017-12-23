@@ -11,21 +11,20 @@ public class Controller {
 	public static void main(String[] args) throws IOException {
 	// open file input stream
 			BufferedReader reader = new BufferedReader(new FileReader(
-					"C:\\Users\\root\\eclipse-workspace\\distributedsystemsproject\\src\\dictionary.csv"));
+					"C:\\Users\\root\\eclipse-workspace\\distributedsystemsproject\\src\\dictionary.csv")); 
+			// root will need to be changed to local save of the dictonary cs as it does not recognise the csv file path otherwise
 
 			// read file line by line
 			String line = null;
 			Scanner scanner = null;
-			List<DictionaryService> dictList = new ArrayList<>();
 
 			while ((line = reader.readLine()) != null) {
-				DictionaryService dict = new DictionaryService();
 				scanner = new Scanner(line);
 				scanner.useDelimiter(",");
 				while (scanner.hasNext()) {
-					String data = scanner.nextLine();
+					String data = scanner.nextLine(); // reads the csv file line by line
 					
-						System.out.println(data);
+						System.out.println(data); // prints out the dictionary csv file to the console
 				}
 			}
 			
